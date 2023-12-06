@@ -27,8 +27,21 @@ Find in the question-4-code folder in reproducible-research_homework repo.
 *How many rows and columns does the table have?*  
 There are 34 rows and 13 columns in the table.  
 
-*What transformation can you use to fit a linear model to the data?*  
-You could log transform the data.
+*What transformation can you use to fit a linear model to the data? Apply the transformation*  
+You could log transform the data.  
+
+*Find the exponent (α) and scaling factor (β) of the allometric law for dsDNA viruses and write the p-values from the model you obtained, are they statistically significant? Compare the values you found to those shown in Table 2 of the paper, did you find the same values?*  
+x  
+
+*The code to reproduce the figure:*  
+x  
+
+*What is the estimated volume of a 300 kb dsDNA virus?*  
+16.34985  
+
+**Bonus Question:**  
+Reproducibility is when the authors provide all the necessary data and code to run the scientific analysis again, re-creating the results. However, replicability is a study that arrives at the same scientific findings as another study, collecting new data (potentially with different methods) and completing analyses. 
+
 
 ## Instructions
 
