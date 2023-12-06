@@ -22,7 +22,7 @@ As the same seed is set twice, the same 5 random numbers are generated each time
 *Reproducible simulation of Brownian motion:*  
 Find in the question-4-code folder in reproducible-research_homework repo.  
 
-*Image of commit history code comparison*  
+*Image of commit history code comparison:*  
 ![CAPTION](https://github.com/aminahmemon/reproducible-research_homework/blob/7290d741eced0b17ac5bdc2b5f41513445841257/Commit_history_comparison.png)
 
 **Question 5**  
