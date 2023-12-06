@@ -17,7 +17,10 @@ rnorm(5) #0.1  0.2  0.3  0.4  0.5*
 *set.seed(123)  
 rnorm(5) #0.1  0.2  0.3  0.4  0.5*  
 
-As the same seed is set twice, the same 5 random numbers are generated each time the code is run.  
+As the same seed is set twice, the same 5 random numbers are generated each time the code is run.    
+
+*Reproducible simulation of Brownian motion*  
+Find in the question-4-code folder in reproducible-research_homework repo.
 
 **Question 5**  
 
