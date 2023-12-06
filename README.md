@@ -1,6 +1,23 @@
 # Reproducible research: version control and R
 
-\# INSERT ANSWERS HERE #
+**Questions 1, 2 and 3 link:**
+
+**Question 4**
+
+*Random walk observation:*
+The code creates two 2D random walk plots with 500 steps each, comparing them side by side. Each plot is independent of each other and a change in one plot does not affect the other. In both plots, the starting point of the walk is centred at the origin. Moreover, each step in a walk is represented by a line segment whereby the colour (from light blue to dark blue) of the line segment correlates to the time step (from 0 to 500 steps).  
+However, both walks do not follow the same paths as the walks reach 500 steps as random angles are created at each step. 
+
+*What is a random seed and how does it work?*  
+A random seed is a base value (or vector) used by a pseudorandom generator to initiate a random number generator. In R a random seed  with a specified seed value is set with *set.seed()* function. It ensures the reproducibility of the sequence of random numbers as it guarantees that the sequence of random numbers is constant across different runs of the code. An example of how this works  can be seen in the code below:  
+
+*set.seed(123)  
+rnorm(5) #0.1  0.2  0.3  0.4  0.5*  
+
+*set.seed(123)  
+rnorm(5) #0.1  0.2  0.3  0.4  0.5*  
+
+As the same seed is set twice, the same 5 random numbers are generated each time the code is run.  
 
 ## Instructions
 
