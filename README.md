@@ -19,6 +19,14 @@ rnorm(5) #0.1  0.2  0.3  0.4  0.5*
 
 As the same seed is set twice, the same 5 random numbers are generated each time the code is run.  
 
+**Question 5**  
+
+*How many rows and columns does the table have?*  
+There are 34 rows and 13 columns in the table.  
+
+*What transformation can you use to fit a linear model to the data?*  
+You could log transform the data.
+
 ## Instructions
 
 The homework for this Computer skills practical is divided into 5 questions for a total of 100 points (plus an optional bonus question worth 10 extra points). First, fork this repo and make sure your fork is made **Public** for marking. Answers should be added to the # INSERT ANSWERS HERE # section above in the **README.md** file of your forked repository.
