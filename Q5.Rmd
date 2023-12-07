@@ -7,7 +7,14 @@ date: "2023-12-07"
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
+*Import the data for double-stranded DNA (dsDNA) viruses taken from the Supplementary Materials of the original paper into Posit Cloud (the csv file is in the question-5-data folder). How many rows and columns does the table have? (3 points)*  
 
+```{r}
+row_number <- nrow(Cui_etal2014)
+row_number #33
+column_number <- ncol(Cui_etal2014)
+column_number #13
+```
 *What transformation can you use to fit a linear model to the data? Apply the transformation. (3 points)*  
 You can log transform the data by applying the natural logarithm to the data.
 ```{r}
