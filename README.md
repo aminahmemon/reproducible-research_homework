@@ -43,7 +43,15 @@ x
 16.34985  
 
 **Bonus Question:**  
-Reproducibility is when the authors provide all the necessary data and code to run the scientific analysis again, re-creating the results. However, replicability is a study that arrives at the same scientific findings as another study, collecting new data (potentially with different methods) and completing analyses. 
+Reproducibility is when the authors provide all the necessary data and code to run the scientific analysis again, re-creating the results. However, replicability is a study that arrives at the same scientific findings as another study, collecting new data (potentially with different methods) and completing analyses. Both Git and GitHub can increase the reproducibility and replicability of work but can have its limitations too.  
+
+Git offers version control. It is a powerful way to track and compare versions over time, ensuring you can always go back to previous versions. This makes it easier for you to identify when the changes occurred and what they were. Both facilitate collaboration whereby multiple people can work asynchronously and merge their contributions at any time. Furthermore, Git and GitHub allow for openly sharing work which promotes open science and transparency. This allows others to scrutinise and build upon your findings to increase replicability.  
+
+There are limitations too. Regarding open science, some scientists may not want to share their work openly because of intellectual property concerns. Some Git limitations include that it may not be able to handle large binary files efficiently which can slow cloning and pushing operations down. GitHub also has size limitations. Moreover, it is costly and its free accounts limit the number of private repositories. It is also dependent on an internet connection to carry out pushing, pulling and cloning repositories which can be challenging when the internet is unavailable. 
+
+
+
+
 
 
 ## Instructions
