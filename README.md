@@ -48,11 +48,14 @@ scaling_factor <- exp(coef(linear_model)[1])
 cat("Exponent (alpha):", exponent, "\n")  
 cat("Scaling Factor (beta):", scaling_factor, "\n")  
 
-The p-values obtained are as follows:   
-- Intercept p-value = 2.28 x 10<sup>-10</sup>  
-- Slope for genome length p-value = 6.44 x 10<sup>-10</sup>  
+From this, I obtained the following values:  
+- exponent (α) = 1181.807
 
-They are statistically significant as they are both smaller than 0.005.   
+Its p-value was 2.28 x 10<sup>-10</sup> which is less than common significance levels such as 0.005. It is therefore statistically significant.  
+
+- scaling factor (β) = 1.5152
+
+Its p-value was 6.44 x 10<sup>-10</sup> which is less than common significance levels such as 0.005. It is therefore statistically significant.  
 
 *Write the code to reproduce the figure shown below. (10 points)*  
 ggplot(linear_model, aes(x = `Virion volume (nm×nm×nm)`, y = `Genome length (kb)`)) +  
