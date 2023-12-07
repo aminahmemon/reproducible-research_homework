@@ -1,0 +1,54 @@
+---
+title: "Q5"
+output: html_document
+date: "2023-12-07"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+*What transformation can you use to fit a linear model to the data? Apply the transformation. (3 points)*  
+You can log transform the data by applying the natural logarithm to the data.
+```{r}
+# Applying the log transformation:
+columns_to_log <- c("Virion volume (nm×nm×nm)", "Genome length (kb)") #We only want to transform Virion volume and Genome length, so we remove the other columns
+transformation <- log(Cui_etal2014[, columns_to_log])
+```
+
+*Find the exponent (α) and scaling factor (β) of the allometric law for dsDNA viruses and write the p-values from the model you obtained, are they statistically significant? Compare the values you found to those shown in Table 2 of the paper, did you find the same values? (10 points)*  
+```{r}
+linear_model <- lm(transformation) #Fitting linear model to data
+exponent <- coef(linear_model)[2]
+scaling_factor <- exp(coef(linear_model)[1])
+
+cat("Exponent (alpha):", exponent, "\n")
+cat("Scaling Factor (beta):", scaling_factor, "\n")
+
+summary(linear_model) #obtaining p-values
+```
+*Write the code to reproduce the figure shown below. (10 points)*  
+```{r}
+# Install and load packages
+install.packages("ggplot2")
+library(ggplot2)
+
+# Code to reproduce the figure
+ggplot(linear_model, aes(x = `Virion volume (nm×nm×nm)`, y = `Genome length (kb)`)) +
+  geom_point() +
+  geom_smooth(method = "lm", se = TRUE, fill = "grey58", colour = "royalblue2", linewidth = 0.7) + #adding a blue linear regression line and a grey 95% cl
+  labs(x = "log [Genome length (kb)]", y = "log [Virion volume nm3)]") +
+  theme_minimal() + 
+  theme(axis.title = element_text(face = "bold")) + #adding bold font to axis titles
+  theme(panel.border = element_rect(colour = "grey42", fill = NA, size = 0.5))
+```
+
+*What is the estimated volume of a 300 kb dsDNA virus? (4 points)*
+```{r}
+log300 <- log(300) #finding log of 300 to align with the log transformed model 
+log300
+estimate_volume <- (1.5152*log300) + (7.0748) #using equation of a straight line (y = mx+c) to solve for estimated volume where m = 1.5152 (slope estimate), x = log300 (genome length) and c = 7.0748 (intercept estimate)
+estimate_volume #answer = 15.71717
+
+```
+
