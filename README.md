@@ -29,7 +29,7 @@ Find it in the question-4-code folder in reproducible-research_homework repo.
 I have also uploaded a file called 'Q5.Rmd' into the repo containing all the code to answer the following questions, as well as including the code below.  
 
 *How many rows and columns does the table have? (3 points)*  
-There are 34 rows and 13 columns in the table.  
+There are 33 rows and 13 columns in the table.  
 
 *What transformation can you use to fit a linear model to the data? Apply the transformation (3 points)*   
 You can log transform the data by applying the natural logarithm to the data. The code can be seen below:   
