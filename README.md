@@ -26,21 +26,51 @@ Find it in the question-4-code folder in reproducible-research_homework repo.
 ![CAPTION](https://github.com/aminahmemon/reproducible-research_homework/blob/7290d741eced0b17ac5bdc2b5f41513445841257/Commit_history_comparison.png)
 
 **Question 5**  
+I have also uploaded a file called 'Q5.Rmd' into the repo containing all the code to answer the following questions, as well as including the code below.  
 
 *How many rows and columns does the table have? (3 points)*  
 There are 34 rows and 13 columns in the table.  
 
-*What transformation can you use to fit a linear model to the data? Apply the transformation (3 points)*  
-You could log transform the data.  
+*What transformation can you use to fit a linear model to the data? Apply the transformation (3 points)*   
+You can log transform the data by applying the natural logarithm to the data. The code can be seen below:   
+
+#Applying the log transformation:  
+columns_to_log <- c("Virion volume (nm×nm×nm)", "Genome length (kb)") #We only want to transform Virion volume and Genome length, so we remove the other columns  
+transformation <- log(Cui_etal2014[, columns_to_log])
 
 *Find the exponent (α) and scaling factor (β) of the allometric law for dsDNA viruses and write the p-values from the model you obtained, are they statistically significant? Compare the values you found to those shown in Table 2 of the paper, did you find the same values? (10 points)*  
-x  
+When rounded up, the exponent (α) and scaling factor (β) of the allometric law for dsDNA viruses I found are the same as those in Table 2 of the paper. The code to find this is below:  
+
+linear_model <- lm(transformation) #Fitting linear model to data  
+exponent <- coef(linear_model)[2]  
+scaling_factor <- exp(coef(linear_model)[1])  
+
+cat("Exponent (alpha):", exponent, "\n")  
+cat("Scaling Factor (beta):", scaling_factor, "\n")  
+
+The p-values obtained are as follows:   
+- Intercept p-value = 2.28 x 10<sup>-10</sup>  
+- Slope for genome length p-value = 6.44 x 10<sup>-10</sup>  
+
+They are statistically significant as they are both smaller than 0.005.   
 
 *Write the code to reproduce the figure shown below. (10 points)*  
-x  
+ggplot(linear_model, aes(x = `Virion volume (nm×nm×nm)`, y = `Genome length (kb)`)) +  
+  geom_point() +  
+  geom_smooth(method = "lm", se = TRUE, fill = "grey58", colour = "royalblue2", linewidth = 0.7) + #adding a blue linear regression line and a grey 95% cl  
+  labs(x = "log [Genome length (kb)]", y = "log [Virion volume nm3)]") +  
+  theme_minimal() +  
+  theme(axis.title = element_text(face = "bold")) + #adding bold font to axis titles  
+  theme(panel.border = element_rect(colour = "grey42", fill = NA, size = 0.5))    
 
-*What is the estimated volume of a 300 kb dsDNA virus?*  
-16.34985  
+*What is the estimated volume of a 300 kb dsDNA virus? (4 points)*  
+15.71717nm<sup>3</nm>  
+
+The code can be found below:  
+
+log300 <- log(300) #finding log of 300 to align with the log transformed model  
+log300  
+estimate_volume <- (1.5152*log300) + (7.0748) #using equation of a straight line (y = mx+c) to solve for estimated volume where m = 1.5152 (slope estimate), x = log300 (genome length) and c = 7.0748 (intercept estimate)  
 
 **Bonus (10 points) Explain the difference between reproducibility and replicability in scientific research. How can git and GitHub be used to enhance the reproducibility and replicability of your work? what limitations do they have?**  
 Reproducibility is when the authors provide all the necessary data and code to run the scientific analysis again, re-creating the results. However, replicability is a study that arrives at the same scientific findings as another study, collecting new data (potentially with different methods) and completing analyses.  
