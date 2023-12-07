@@ -69,13 +69,15 @@ ggplot(linear_model, aes(x = `Virion volume (nm×nm×nm)`, y = `Genome length (k
   theme(panel.border = element_rect(colour = "grey42", fill = NA, size = 0.5))    
 
 *What is the estimated volume of a 300 kb dsDNA virus? (4 points)*  
-15.71717nm<sup>3</nm>  
+6697007nm<sup>3</nm>  
 
 The code can be found below:  
 
-log300 <- log(300) #finding log of 300 to align with the log transformed model  
+log300 <- log(300) #finding log of 300 to align with the log-transformed model  
 log300  
-estimate_volume <- (1.5152*log300) + (7.0748) #using equation of a straight line (y = mx+c) to solve for estimated volume where m = 1.5152 (slope estimate), x = log300 (genome length) and c = 7.0748 (intercept estimate)  
+logvolume <- (1.5152*log300) + (7.0748) #using equation of a straight line (y = mx+c) to solve for estimated volume where m = 1.5152 (slope estimate), x = log300 (genome length) and c = 7.0748 (intercept estimate)  
+estimate_volume <- exp(logvolume) #inverse the log  
+estimate_volume  
 
 **Bonus (10 points) Explain the difference between reproducibility and replicability in scientific research. How can git and GitHub be used to enhance the reproducibility and replicability of your work? what limitations do they have?**  
 Reproducibility is when the authors provide all the necessary data and code to run the scientific analysis again, re-creating the results. However, replicability is a study that arrives at the same scientific findings as another study, collecting new data (potentially with different methods) and completing analyses.  
