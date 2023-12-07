@@ -14,7 +14,7 @@ row_number <- nrow(Cui_etal2014)
 row_number #33
 column_number <- ncol(Cui_etal2014)
 column_number #13
-#There are 33 rows and 13 columns. 
+#There are 33 rows and 13 columns.
 ```
 *What transformation can you use to fit a linear model to the data? Apply the transformation. (3 points)*  
 You can log transform the data by applying the natural logarithm to the data.
