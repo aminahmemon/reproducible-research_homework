@@ -1,6 +1,8 @@
 # Reproducible research: version control and R
 
-**Questions 1, 2 and 3 link:**
+**Questions 1, 2 and 3 link:**  
+
+https://github.com/anon1061896/logistic_growth.git  
 
 **Question 4**
 
@@ -20,7 +22,7 @@ rnorm(5) #0.1  0.2  0.3  0.4  0.5*
 As the same seed is set twice, the same 5 random numbers are generated each time the code is run.    
 
 *Edit the script to make a reproducible simulation of Brownian motion. Commit the file and push it to your forked reproducible-research_homework repo. (10 points)*   
-Find it in the question-4-code folder in reproducible-research_homework repo.  
+Find it in the question-4-code folder in reproducible-research_homework repo. The file is called random_walk.R  
 
 *Go to your commit history and click on the latest commit. Show the edit you made to the code in the comparison view (add this image to the README.md of the fork). (5 points)*  
 ![CAPTION](https://github.com/aminahmemon/reproducible-research_homework/blob/7290d741eced0b17ac5bdc2b5f41513445841257/Commit_history_comparison.png)
@@ -67,13 +69,15 @@ ggplot(linear_model, aes(x = `Virion volume (nm×nm×nm)`, y = `Genome length (k
   theme(panel.border = element_rect(colour = "grey42", fill = NA, size = 0.5))    
 
 *What is the estimated volume of a 300 kb dsDNA virus? (4 points)*  
-15.71717nm<sup>3</nm>  
+6697007nm<sup>3</nm>  
 
 The code can be found below:  
 
-log300 <- log(300) #finding log of 300 to align with the log transformed model  
+log300 <- log(300) #finding log of 300 to align with the log-transformed model  
 log300  
-estimate_volume <- (1.5152*log300) + (7.0748) #using equation of a straight line (y = mx+c) to solve for estimated volume where m = 1.5152 (slope estimate), x = log300 (genome length) and c = 7.0748 (intercept estimate)  
+logvolume <- (1.5152*log300) + (7.0748) #using equation of a straight line (y = mx+c) to solve for estimated volume where m = 1.5152 (slope estimate), x = log300 (genome length) and c = 7.0748 (intercept estimate)  
+estimate_volume <- exp(logvolume) #inverse the log  
+estimate_volume  
 
 **Bonus (10 points) Explain the difference between reproducibility and replicability in scientific research. How can git and GitHub be used to enhance the reproducibility and replicability of your work? what limitations do they have?**  
 Reproducibility is when the authors provide all the necessary data and code to run the scientific analysis again, re-creating the results. However, replicability is a study that arrives at the same scientific findings as another study, collecting new data (potentially with different methods) and completing analyses.  
