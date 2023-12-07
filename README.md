@@ -4,11 +4,11 @@
 
 **Question 4**
 
-*Random walk observation:*  
+*A script for simulating a random_walk is provided in the question-4-code folder of this repo. Execute the code to produce the paths of two random walks. What do you observe? (10 points)*    
 The code creates two 2D random walk plots with 500 steps each, comparing them side by side. Each plot is independent of each other and a change in one plot does not affect the other. In both plots, the starting point of the walk is centred at the origin. Moreover, each step in a walk is represented by a line segment whereby the colour (from light blue to dark blue) of the line segment correlates to the time step (from 0 to 500 steps).  
 However, both walks do not follow the same paths as the walks reach 500 steps as random angles are created at each step. 
 
-*What is a random seed and how does it work?*  
+*Investigate the term random seeds. What is a random seed and how does it work? (5 points)*  
 A random seed is a base value (or vector) used by a pseudorandom generator to initiate a random number generator. In R a random seed  with a specified seed value is set with *set.seed()* function. It ensures the reproducibility of the sequence of random numbers as it guarantees that the sequence of random numbers is constant across different runs of the code. An example of how this works  can be seen in the code below:  
 
 *set.seed(123)  
@@ -19,40 +19,36 @@ rnorm(5) #0.1  0.2  0.3  0.4  0.5*
 
 As the same seed is set twice, the same 5 random numbers are generated each time the code is run.    
 
-*Reproducible simulation of Brownian motion:*  
-Find in the question-4-code folder in reproducible-research_homework repo.  
+*Edit the script to make a reproducible simulation of Brownian motion. Commit the file and push it to your forked reproducible-research_homework repo. (10 points)*   
+Find it in the question-4-code folder in reproducible-research_homework repo.  
 
-*Image of commit history code comparison:*  
+*Go to your commit history and click on the latest commit. Show the edit you made to the code in the comparison view (add this image to the README.md of the fork). (5 points)*  
 ![CAPTION](https://github.com/aminahmemon/reproducible-research_homework/blob/7290d741eced0b17ac5bdc2b5f41513445841257/Commit_history_comparison.png)
 
 **Question 5**  
 
-*How many rows and columns does the table have?*  
+*How many rows and columns does the table have? (3 points)*  
 There are 34 rows and 13 columns in the table.  
 
-*What transformation can you use to fit a linear model to the data? Apply the transformation*  
+*What transformation can you use to fit a linear model to the data? Apply the transformation (3 points)*  
 You could log transform the data.  
 
-*Find the exponent (α) and scaling factor (β) of the allometric law for dsDNA viruses and write the p-values from the model you obtained, are they statistically significant? Compare the values you found to those shown in Table 2 of the paper, did you find the same values?*  
+*Find the exponent (α) and scaling factor (β) of the allometric law for dsDNA viruses and write the p-values from the model you obtained, are they statistically significant? Compare the values you found to those shown in Table 2 of the paper, did you find the same values? (10 points)*  
 x  
 
-*The code to reproduce the figure:*  
+*Write the code to reproduce the figure shown below. (10 points)*  
 x  
 
 *What is the estimated volume of a 300 kb dsDNA virus?*  
 16.34985  
 
-**Bonus Question:**  
-Reproducibility is when the authors provide all the necessary data and code to run the scientific analysis again, re-creating the results. However, replicability is a study that arrives at the same scientific findings as another study, collecting new data (potentially with different methods) and completing analyses. Both Git and GitHub can increase the reproducibility and replicability of work but can have its limitations too.  
+**Bonus (10 points) Explain the difference between reproducibility and replicability in scientific research. How can git and GitHub be used to enhance the reproducibility and replicability of your work? what limitations do they have?**  
+Reproducibility is when the authors provide all the necessary data and code to run the scientific analysis again, re-creating the results. However, replicability is a study that arrives at the same scientific findings as another study, collecting new data (potentially with different methods) and completing analyses.  
 
-Git offers version control. It is a powerful way to track and compare versions over time, ensuring you can always go back to previous versions. This makes it easier for you to identify when the changes occurred and what they were. Both facilitate collaboration whereby multiple people can work asynchronously and merge their contributions at any time. Furthermore, Git and GitHub allow for openly sharing work which promotes open science and transparency. This allows others to scrutinise and build upon your findings to increase replicability.  
+Both Git and GitHub can increase the reproducibility and replicability of work.  Git offers version control. It is a powerful way to track and compare versions over time, ensuring you can always go back to previous versions. This makes it easier for you to identify when the changes occurred and what they were. Both facilitate collaboration whereby multiple people can work asynchronously and merge their contributions at any time.  
+Furthermore, Git and GitHub allow for openly sharing work which promotes open science. It makes research more reproducible, transparent, reusable, collaborative, accountable and accessible to others. Scientists can more easily increase the discoverability and visibility of one's work, allowing access to new data and software resources. This also allows others to scrutinise and build upon your findings to increase replicability.  
 
 There are limitations too. Regarding open science, some scientists may not want to share their work openly because of intellectual property concerns. Some Git limitations include that it may not be able to handle large binary files efficiently which can slow cloning and pushing operations down. GitHub also has size limitations. Moreover, it is costly and its free accounts limit the number of private repositories. It is also dependent on an internet connection to carry out pushing, pulling and cloning repositories which can be challenging when the internet is unavailable. 
-
-
-
-
-
 
 ## Instructions
 
