@@ -22,7 +22,7 @@ rnorm(5) #0.1  0.2  0.3  0.4  0.5*
 As the same seed is set twice, the same 5 random numbers are generated each time the code is run.    
 
 *Edit the script to make a reproducible simulation of Brownian motion. Commit the file and push it to your forked reproducible-research_homework repo. (10 points)*   
-Find it in the question-4-code folder in reproducible-research_homework repo.  
+Find it in the question-4-code folder in reproducible-research_homework repo. The file is called random_walk.R  
 
 *Go to your commit history and click on the latest commit. Show the edit you made to the code in the comparison view (add this image to the README.md of the fork). (5 points)*  
 ![CAPTION](https://github.com/aminahmemon/reproducible-research_homework/blob/7290d741eced0b17ac5bdc2b5f41513445841257/Commit_history_comparison.png)
