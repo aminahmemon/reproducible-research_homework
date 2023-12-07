@@ -53,10 +53,11 @@ ggplot(linear_model, aes(x = `Virion volume (nm×nm×nm)`, y = `Genome length (k
 
 *What is the estimated volume of a 300 kb dsDNA virus? (4 points)*
 ```{r}
-log300 <- log(300) #finding log of 300 to align with the log transformed model 
+log300 <- log(300) #finding log of 300 to align with the log-transformed model 
 log300
-estimate_volume <- (1.5152*log300) + (7.0748) #using equation of a straight line (y = mx+c) to solve for estimated volume where m = 1.5152 (slope estimate), x = log300 (genome length) and c = 7.0748 (intercept estimate)
-estimate_volume #answer = 15.71717
+logvolume <- (1.5152*log300) + (7.0748) #using equation of a straight line (y = mx+c) to solve for estimated volume where m = 1.5152 (slope estimate), x = log300 (genome length) and c = 7.0748 (intercept estimate)
+estimate_volume <- exp(logvolume) #inverse the log
+estimate_volume
 
 ```
 
